@@ -26,6 +26,8 @@ namespace JodelAPI.Objects
 
         public bool IsImage { get; set; }
 
+		public string ImageUrl { get; set; }
+
         public int VoteCount { get; set; }
 
         public int CommentsCount { get; set; }

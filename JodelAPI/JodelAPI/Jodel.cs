@@ -76,32 +76,34 @@ namespace JodelAPI
 
             foreach (var item in jfr.recent)
             {
-                string msg = item.message;
-                bool isUrl = false;
-                if (msg == "Jodel")
-                {
-                    msg = "http:" + item.image_url;
-                    isUrl = true;
-                }
+                string image_url = "";
+				bool isUrl = false;
 
-                Jodels objJodels = new Jodels
-                {
-                    PostId = item.post_id,
-                    Message = msg,
-                    HexColor = item.color,
-                    IsImage = isUrl,
-                    VoteCount = item.vote_count,
-                    LocationName = item.location.name,
-                    CommentsCount = item.child_count ?? 0,
-                    ChildCount = item.child_count ?? 0,
-                    CreatedAt = DateTime.ParseExact(item.created_at.Replace("Z", "").Replace("T", " "), "yyyy-MM-dd HH:mm:ss.fff", null),
-                    UpdatedAt = DateTime.ParseExact(item.updated_at.Replace("Z", "").Replace("T", " "), "yyyy-MM-dd HH:mm:ss.fff", null),
-                    Distance = item.distance,
-                    IsNotificationEnabled = item.notifications_enabled,
-                    PinCount = item.pin_count,
-                    PostOwn = item.post_own,
-                    UserHandle = item.user_handle
-                };
+				if (item.image_url != null)
+				{
+					image_url = "http:" + item.image_url;
+					isUrl = true;
+				}
+
+				Jodels objJodels = new Jodels
+				{
+					PostId = item.post_id,
+					Message = item.message,
+					HexColor = item.color,
+					IsImage = isUrl,
+					ImageUrl = image_url,
+					VoteCount = item.vote_count,
+					LocationName = item.location.name,
+					CommentsCount = item.child_count ?? 0,
+					ChildCount = item.child_count ?? 0,
+					CreatedAt = DateTime.ParseExact(item.created_at.Replace("Z", "").Replace("T", " "), "yyyy-MM-dd HH:mm:ss.fff", null),
+					UpdatedAt = DateTime.ParseExact(item.updated_at.Replace("Z", "").Replace("T", " "), "yyyy-MM-dd HH:mm:ss.fff", null),
+					Distance = item.distance,
+					IsNotificationEnabled = item.notifications_enabled,
+					PinCount = item.pin_count,
+					PostOwn = item.post_own,
+					UserHandle = item.user_handle
+				};
 
                 temp.Add(objJodels);
             }
@@ -129,32 +131,34 @@ namespace JodelAPI
 
             foreach (var item in jfr.recent)
             {
-                string msg = item.message;
-                bool isUrl = false;
-                if (msg == "Jodel")
-                {
-                    msg = "http:" + item.image_url;
-                    isUrl = true;
-                }
+                string image_url = "";
+				bool isUrl = false;
 
-                Jodels objJodels = new Jodels
-                {
-                    PostId = item.post_id,
-                    Message = msg,
-                    HexColor = item.color,
-                    IsImage = isUrl,
-                    VoteCount = item.vote_count,
-                    LocationName = item.location.name,
-                    CommentsCount = item.child_count ?? 0,
-                    ChildCount = item.child_count ?? 0,
-                    CreatedAt = DateTime.ParseExact(item.created_at.Replace("Z", "").Replace("T", " "), "yyyy-MM-dd HH:mm:ss.fff", null),
-                    UpdatedAt = DateTime.ParseExact(item.updated_at.Replace("Z", "").Replace("T", " "), "yyyy-MM-dd HH:mm:ss.fff", null),
-                    Distance = item.distance,
-                    IsNotificationEnabled = item.notifications_enabled,
-                    PinCount = item.pin_count,
-                    PostOwn = item.post_own,
-                    UserHandle = item.user_handle
-                };
+				if (item.image_url != null)
+				{
+					image_url = "http:" + item.image_url;
+					isUrl = true;
+				}
+
+				Jodels objJodels = new Jodels
+				{
+					PostId = item.post_id,
+					Message = item.message,
+					HexColor = item.color,
+					IsImage = isUrl,
+					ImageUrl = image_url,
+					VoteCount = item.vote_count,
+					LocationName = item.location.name,
+					CommentsCount = item.child_count ?? 0,
+					ChildCount = item.child_count ?? 0,
+					CreatedAt = DateTime.ParseExact(item.created_at.Replace("Z", "").Replace("T", " "), "yyyy-MM-dd HH:mm:ss.fff", null),
+					UpdatedAt = DateTime.ParseExact(item.updated_at.Replace("Z", "").Replace("T", " "), "yyyy-MM-dd HH:mm:ss.fff", null),
+					Distance = item.distance,
+					IsNotificationEnabled = item.notifications_enabled,
+					PinCount = item.pin_count,
+					PostOwn = item.post_own,
+					UserHandle = item.user_handle
+				};
 
                 temp.Add(objJodels);
             }
@@ -185,32 +189,34 @@ namespace JodelAPI
                 JsonJodelsLastRound.RootObject jlr = JsonConvert.DeserializeObject<JsonJodelsLastRound.RootObject>(plainJson);
                 foreach (var item in jlr.posts)
                 {
-                    string msg = item.message;
-                    bool isUrl = false;
-                    if (msg == "Jodel")
-                    {
-                        msg = "http:" + item.image_url;
-                        isUrl = true;
-                    }
+                    string image_url = "";
+					bool isUrl = false;
 
-                    Jodels objJodels = new Jodels
-                    {
-                        PostId = item.post_id,
-                        Message = msg,
-                        HexColor = item.color,
-                        IsImage = isUrl,
-                        VoteCount = item.vote_count,
-                        LocationName = item.location.name,
-                        CommentsCount = item.child_count ?? 0,
-                        ChildCount = item.child_count ?? 0,
-                        CreatedAt = DateTime.ParseExact(item.created_at.Replace("Z", "").Replace("T", " "), "yyyy-MM-dd HH:mm:ss.fff", null),
-                        UpdatedAt = DateTime.ParseExact(item.updated_at.Replace("Z", "").Replace("T", " "), "yyyy-MM-dd HH:mm:ss.fff", null),
-                        Distance = item.distance,
-                        IsNotificationEnabled = item.notifications_enabled,
-                        PinCount = item.pin_count,
-                        PostOwn = item.post_own,
-                        UserHandle = item.user_handle
-                    };
+					if (item.image_url != null)
+					{
+						image_url = "http:" + item.image_url;
+						isUrl = true;
+					}
+
+					Jodels objJodels = new Jodels
+					{
+						PostId = item.post_id,
+						Message = item.message,
+						HexColor = item.color,
+						IsImage = isUrl,
+						ImageUrl = image_url,
+						VoteCount = item.vote_count,
+						LocationName = item.location.name,
+						CommentsCount = item.child_count ?? 0,
+						ChildCount = item.child_count ?? 0,
+						CreatedAt = DateTime.ParseExact(item.created_at.Replace("Z", "").Replace("T", " "), "yyyy-MM-dd HH:mm:ss.fff", null),
+						UpdatedAt = DateTime.ParseExact(item.updated_at.Replace("Z", "").Replace("T", " "), "yyyy-MM-dd HH:mm:ss.fff", null),
+						Distance = item.distance,
+						IsNotificationEnabled = item.notifications_enabled,
+						PinCount = item.pin_count,
+						PostOwn = item.post_own,
+						UserHandle = item.user_handle
+					};
 
                     temp.Add(objJodels);
                 }
@@ -244,32 +250,34 @@ namespace JodelAPI
                     JsonConvert.DeserializeObject<JsonJodelsLastRound.RootObject>(plainJson);
                 foreach (var item in jlr.posts)
                 {
-                    string msg = item.message;
-                    bool isUrl = false;
-                    if (msg == "Jodel")
-                    {
-                        msg = "http:" + item.image_url; // WELL THERE IS NO IMAGE_URL!!!!???
-                        isUrl = true;
-                    }
+                    string image_url = "";
+					bool isUrl = false;
 
-                    Jodels objJodels = new Jodels
-                    {
-                        PostId = item.post_id,
-                        Message = msg,
-                        HexColor = item.color,
-                        IsImage = isUrl,
-                        VoteCount = item.vote_count,
-                        LocationName = item.location.name,
-                        CommentsCount = item.child_count ?? 0,
-                        ChildCount = item.child_count ?? 0,
-                        CreatedAt = DateTime.ParseExact(item.created_at.Replace("Z", "").Replace("T", " "), "yyyy-MM-dd HH:mm:ss.fff", null),
-                        UpdatedAt = DateTime.ParseExact(item.updated_at.Replace("Z", "").Replace("T", " "), "yyyy-MM-dd HH:mm:ss.fff", null),
-                        Distance = item.distance,
-                        IsNotificationEnabled = item.notifications_enabled,
-                        PinCount = item.pin_count,
-                        PostOwn = item.post_own,
-                        UserHandle = item.user_handle
-                    };
+					if (item.image_url != null)
+					{
+						image_url = "http:" + item.image_url;
+						isUrl = true;
+					}
+
+					Jodels objJodels = new Jodels
+					{
+						PostId = item.post_id,
+						Message = item.message,
+						HexColor = item.color,
+						IsImage = isUrl,
+						ImageUrl = image_url,
+						VoteCount = item.vote_count,
+						LocationName = item.location.name,
+						CommentsCount = item.child_count ?? 0,
+						ChildCount = item.child_count ?? 0,
+						CreatedAt = DateTime.ParseExact(item.created_at.Replace("Z", "").Replace("T", " "), "yyyy-MM-dd HH:mm:ss.fff", null),
+						UpdatedAt = DateTime.ParseExact(item.updated_at.Replace("Z", "").Replace("T", " "), "yyyy-MM-dd HH:mm:ss.fff", null),
+						Distance = item.distance,
+						IsNotificationEnabled = item.notifications_enabled,
+						PinCount = item.pin_count,
+						PostOwn = item.post_own,
+						UserHandle = item.user_handle
+					};
 
                     temp.Add(objJodels);
                 }
@@ -474,13 +482,26 @@ namespace JodelAPI
             {
                 foreach (var child in com.children)
                 {
-                    result.Add(new Comments
-                    {
-                        Message = child.message,
-                        PostId = child.post_id,
-                        UserHandle = child.user_handle,
-                        VoteCount = child.vote_count
-                    });
+                    string image_url = "";
+					bool isUrl = false;
+
+					if (child.image_url != null)
+					{
+						image_url = "http:" + child.image_url;
+						isUrl = true;
+					}
+
+					result.Add(new Comments
+					{
+						Message = child.message,
+						PostId = child.post_id,
+						CreatedAt = DateTime.ParseExact(child.created_at.Replace("Z", "").Replace("T", " "), "yyyy-MM-dd HH:mm:ss.fff", null),
+						UpdatedAt = DateTime.ParseExact(child.updated_at.Replace("Z", "").Replace("T", " "), "yyyy-MM-dd HH:mm:ss.fff", null),
+						IsImage = isUrl,
+						ImageUrl = image_url,
+						UserHandle = child.user_handle,
+						VoteCount = child.vote_count
+					});
                 }
             }
 
